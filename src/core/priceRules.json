@@ -1,0 +1,55 @@
+{
+  "prices": {
+    "classic": 269.99,
+    "standout": 322.99,
+    "premium": 394.99
+  },
+  "discounts": {
+    "unilever": [
+      {
+        "type": "discount-percent",
+        "product": "classic",
+        "threshold": 2,
+        "limit": 1,
+        "discount": 100
+      }
+    ],
+    "apple": [
+      {
+        "type": "override",
+        "product": "standout",
+        "threshold": 0,
+        "price": 299.99
+      }
+    ],
+    "nike": [
+      {
+        "type": "override",
+        "product": "premium",
+        "threshold": 4,
+        "price": 379.99
+      }
+    ],
+    "ford": [
+      {
+        "type": "discount-percent",
+        "product": "classic",
+        "threshold": 4,
+        "limit": 1,
+        "discount": 100
+      },
+      {
+        "type": "override",
+        "product": "standout",
+        "threshold": 0,
+        "price": 309.99
+      },
+      {
+        "type": "override",
+        "product": "premium",
+        "threshold": 3,
+        "price": 389.99
+      }
+    ]
+  }
+}

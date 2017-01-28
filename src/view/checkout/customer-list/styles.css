@@ -1,0 +1,38 @@
+:local .customerList {
+  position: relative;
+}
+
+:local .actionBar > span {
+  margin-right: 4px;
+}
+
+:local .customerName {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+:local .customerList li{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+:local .signOutButton {
+  position: absolute;
+  min-width: inherit;
+  bottom: 10px;
+  right: 10px;
+}
+
+:local .button {
+  text-transform: capitalize;
+}
+
+:local .button:global.selected {
+  background-color: #CDFFC0;
+}
+
+:local .button:focus {
+  outline: none;
+}
+
+

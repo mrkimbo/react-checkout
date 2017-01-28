@@ -1,0 +1,53 @@
+:local .shoppingCart {
+  position: relative;
+  font-size: 0.9rem;
+}
+
+:local .cartHeader {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-width: 0 0 1px 0;
+}
+
+:local .cartHeader span {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+:local .cartItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+:local .cartItem span {
+  display: inline-block;
+}
+
+:local .name {
+  width: 160px;
+}
+
+:local .count {
+  width: 50px;
+}
+
+:local .itemTotal {
+  width: 100px;
+  text-align: right;
+}
+
+:local .emptyButton {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+:local .total {
+  display: flex;
+  justify-content: flex-end;
+}
+
+:local .total > span:first-child {
+  margin-right: 10px;
+  font-weight: bold;
+}
