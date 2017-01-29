@@ -583,7 +583,7 @@
     },
     "babel-register": {
       "version": "6.22.0",
-      "from": "babel-register@>=6.22.0 <7.0.0",
+      "from": "babel-register@6.22.0",
       "resolved": "https://nexus.cd.auspost.com.au/nexus/repository/auspost-ddc-npmjs/babel-register/-/babel-register-6.22.0.tgz",
       "dev": true
     },
@@ -1080,6 +1080,12 @@
       "resolved": "https://nexus.cd.auspost.com.au/nexus/content/groups/auspost-ddc-npmjs/decamelize/-/decamelize-1.2.0.tgz",
       "dev": true
     },
+    "deep-assign": {
+      "version": "2.0.0",
+      "from": "deep-assign@latest",
+      "resolved": "https://registry.npmjs.org/deep-assign/-/deep-assign-2.0.0.tgz",
+      "dev": true
+    },
     "deep-is": {
       "version": "0.1.3",
       "from": "deep-is@>=0.1.3 <0.2.0",
@@ -1375,6 +1381,12 @@
       "version": "0.1.6",
       "from": "eventsource@0.1.6",
       "resolved": "https://nexus.cd.auspost.com.au/nexus/repository/auspost-ddc-npmjs/eventsource/-/eventsource-0.1.6.tgz",
+      "dev": true
+    },
+    "exit": {
+      "version": "0.1.2",
+      "from": "exit@>=0.1.2 <0.2.0",
+      "resolved": "https://nexus.cd.auspost.com.au/nexus/content/groups/auspost-ddc-npmjs/exit/-/exit-0.1.2.tgz",
       "dev": true
     },
     "exit-hook": {
@@ -2731,6 +2743,12 @@
       "resolved": "https://nexus.cd.auspost.com.au/nexus/content/groups/auspost-ddc-npmjs/is-number/-/is-number-2.1.0.tgz",
       "dev": true
     },
+    "is-obj": {
+      "version": "1.0.1",
+      "from": "is-obj@>=1.0.0 <2.0.0",
+      "resolved": "https://nexus.cd.auspost.com.au/nexus/content/groups/auspost-ddc-npmjs/is-obj/-/is-obj-1.0.1.tgz",
+      "dev": true
+    },
     "is-path-cwd": {
       "version": "1.0.0",
       "from": "is-path-cwd@>=1.0.0 <2.0.0",
@@ -2834,6 +2852,24 @@
       "resolved": "https://nexus.cd.auspost.com.au/nexus/content/groups/auspost-ddc-npmjs/isstream/-/isstream-0.1.2.tgz",
       "dev": true,
       "optional": true
+    },
+    "jasmine": {
+      "version": "2.5.3",
+      "from": "jasmine@latest",
+      "resolved": "https://nexus.cd.auspost.com.au/nexus/repository/auspost-ddc-npmjs/jasmine/-/jasmine-2.5.3.tgz",
+      "dev": true
+    },
+    "jasmine-core": {
+      "version": "2.5.2",
+      "from": "jasmine-core@>=2.5.2 <2.6.0",
+      "resolved": "https://nexus.cd.auspost.com.au/nexus/content/groups/auspost-ddc-npmjs/jasmine-core/-/jasmine-core-2.5.2.tgz",
+      "dev": true
+    },
+    "jasmine-spec-reporter": {
+      "version": "3.2.0",
+      "from": "jasmine-spec-reporter@latest",
+      "resolved": "https://registry.npmjs.org/jasmine-spec-reporter/-/jasmine-spec-reporter-3.2.0.tgz",
+      "dev": true
     },
     "jodid25519": {
       "version": "1.0.2",
@@ -2958,6 +2994,12 @@
       "version": "2.7.2",
       "from": "less@latest",
       "resolved": "https://registry.npmjs.org/less/-/less-2.7.2.tgz",
+      "dev": true
+    },
+    "less-loader": {
+      "version": "2.2.3",
+      "from": "less-loader@latest",
+      "resolved": "https://registry.npmjs.org/less-loader/-/less-loader-2.2.3.tgz",
       "dev": true
     },
     "levn": {
@@ -4069,9 +4111,9 @@
       "dev": true
     },
     "source-map-support": {
-      "version": "0.4.10",
+      "version": "0.4.11",
       "from": "source-map-support@>=0.4.2 <0.5.0",
-      "resolved": "https://nexus.cd.auspost.com.au/nexus/repository/auspost-ddc-npmjs/source-map-support/-/source-map-support-0.4.10.tgz",
+      "resolved": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.4.11.tgz",
       "dev": true
     },
     "sprintf-js": {

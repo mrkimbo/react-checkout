@@ -6,21 +6,25 @@
 :local .cartHeader {
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-width: 0 0 1px 0;
+
+  span {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 }
 
-:local .cartHeader span {
-  font-weight: bold;
-  margin-bottom: 5px;
+:local .spacer {
+  width: 35px;
 }
 
 :local .cartItem {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   margin-bottom: 5px;
-}
 
-:local .cartItem span {
-  display: inline-block;
+  span {
+    display: inline-block;
+  }
 }
 
 :local .name {
@@ -42,12 +46,17 @@
   right: 10px;
 }
 
+:local .deleteButton {
+  min-width: inherit;
+  margin-right: 10px;
+}
+
 :local .total {
   display: flex;
   justify-content: flex-end;
-}
 
-:local .total > span:first-child {
-  margin-right: 10px;
-  font-weight: bold;
+  > span:first-child {
+    margin-right: 10px;
+    font-weight: bold;
+  }
 }

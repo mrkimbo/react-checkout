@@ -1,5 +1,10 @@
 :local .customerList {
   position: relative;
+
+  li {
+    display: inline-block;
+    margin-right: 5px;
+  }
 }
 
 :local .actionBar > span {
@@ -11,11 +16,6 @@
   font-weight: bold;
 }
 
-:local .customerList li{
-  display: inline-block;
-  margin-right: 5px;
-}
-
 :local .signOutButton {
   position: absolute;
   min-width: inherit;
@@ -25,14 +25,8 @@
 
 :local .button {
   text-transform: capitalize;
+
+  &:global.selected {
+    background-color: #CDFFC0;
+  }
 }
-
-:local .button:global.selected {
-  background-color: #CDFFC0;
-}
-
-:local .button:focus {
-  outline: none;
-}
-
-

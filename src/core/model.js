@@ -1,25 +1,22 @@
 import Signal from 'signals';
+import { createDiscounts } from './discounts';
 
 class Model {
 
   init(priceRules) {
-    this.items = [];
-    this.customer = '';
-    this.discounts = [];
+    this.reset();
     this.priceRules = priceRules;
     this.onChange = new Signal();
   }
 
+  reset() {
+    this.items = [];
+    this.customer = undefined;
+    this.discounts = [];
+  }
+
   addItem = (item) => {
-    let entry = this.items.find((product) => product.id === item.id);
-    if (entry) {
-      entry.count += 1;
-    } else {
-      this.items.push(Object.assign({
-        count: 1,
-        price: this.priceRules.prices[item.id]
-      }, item));
-    }
+    this.items.push(Object.assign({}, item));
 
     this.applyDiscounts();
     this.notify();
@@ -30,12 +27,7 @@ class Model {
     if (idx === -1) {
       return;
     }
-
-    let entry = this.items[idx];
-    entry.count -= 1;
-    if (entry.count <= 0) {
-      this.items.splice(idx, 1);
-    }
+    this.items.splice(idx, 1);
 
     this.applyDiscounts();
     this.notify();
@@ -48,20 +40,24 @@ class Model {
 
   updateCustomer = (customer) => {
     this.customer = customer;
-    this.discounts = this.priceRules[customer] || [];
+    this.discounts = createDiscounts(this.priceRules.discounts[this.customer]);
     this.applyDiscounts();
     this.notify();
   };
 
   applyDiscounts() {
-    // find applicable discounts:
+    // reset prices:
+    this.items.forEach((item) => item.price = this.priceRules.prices[item.id]);
 
+    // find and apply applicable discounts:
+    let newItems = this.items.map((item) => Object.assign({}, item));
+    this.discounts.forEach((discount) => newItems = discount.execute(newItems));
+
+    this.items = newItems;
   }
 
   calculate() {
-    let total = this.items.reduce((n, product) => {
-      return n + (product.price * product.count);
-    }, 0);
+    let total = this.items.reduce((n, product) => n + product.price, 0);
     return total;
   }
 

@@ -19,9 +19,9 @@ module.exports = {
         loader: 'babel!eslint'
       },
       {
-        test: /\.css$/,
+        test: /\.less/,
         exclude: /node_modules/,
-        loader: 'style!css!postcss'
+        loader: 'style!css!postcss!less'
       },
       {
         test: /\.json/,

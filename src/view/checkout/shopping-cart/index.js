@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { formatCurrency } from '../../../core/util';
-import { CART_CLEAR } from '../../../core/actions';
+import { formatCurrency } from '../../../core/currency';
+import { CART_CLEAR, CART_REMOVE } from '../../../core/actions';
 
-import styles from './styles.css';
+import styles from './styles.less';
 
 export default class ShoppingCart extends Component {
 
@@ -11,21 +11,40 @@ export default class ShoppingCart extends Component {
     total: PropTypes.number
   };
 
+  state = {
+    items: []
+  };
+
+  componentWillReceiveProps(props) {
+    // collate shopping cart items
+    this.setState({
+      /*items: props.items.reduce((arr, item) => {
+       let entry = arr.find((product) => product.id === item.id);
+       if (entry) {
+       entry.count += 1;
+       } else {
+       arr.push(Object.assign({ count: 1 }, item));
+       }
+       return arr;
+       }, [])*/
+      items: props.items
+    });
+  }
+
+  removeItem(item) {
+    CART_REMOVE.dispatch(item);
+  }
+
   clearCart() {
     CART_CLEAR.dispatch();
   }
 
   getItemList() {
-    return this.props.items.map((item, idx) =>
+    return this.state.items.map((item, idx) =>
       <li key={idx} className={styles.cartItem}>
-        <div>
-          <span className={styles.name}>{item.displayName}</span>
-          <span className={styles.price}>{formatCurrency(item.price)}</span>
-        </div>
-        <div>
-          <span className={styles.count}>{item.count}</span>
-          <span className={styles.itemTotal}>{formatCurrency(item.price * item.count)}</span>
-        </div>
+        <button className={styles.deleteButton} onClick={this.removeItem.bind(this, item)}>X</button>
+        <span className={styles.name}>{item.displayName}</span>
+        <span className={styles.price}>{formatCurrency(item.price)}</span>
       </li>
     );
   }
@@ -39,14 +58,9 @@ export default class ShoppingCart extends Component {
         <button className={styles.emptyButton} onClick={this.clearCart}>Empty Cart</button>
         <ul>
           <li className={headerClasses.join(' ')}>
-            <div>
-              <span className={styles.name}>Item</span>
-              <span className={styles.price}>Unit Price</span>
-            </div>
-            <div>
-              <span className={styles.count}>Count</span>
-              <span className={styles.itemTotal}>Total</span>
-            </div>
+            <span className={styles.spacer}></span>
+            <span className={styles.name}>Item</span>
+            <span className={styles.price}>Unit Price</span>
           </li>
           {this.getItemList()}
         </ul>

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import { CART_ADD } from '../../../core/actions';
-import styles from './styles.css';
+import styles from './styles.less';
 
 export default class ProductList extends Component {
 

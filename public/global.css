@@ -8,6 +8,7 @@ html, body {
 }
 
 .app {
+  min-width: 400px;
   max-width: 640px;
   margin: auto;
   padding: 10px;
@@ -56,6 +57,9 @@ button:disabled {
 
 section {
   border: 1px solid rgba(0,0,0,0.1);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   padding: 10px;
   margin-bottom: 10px;
 }

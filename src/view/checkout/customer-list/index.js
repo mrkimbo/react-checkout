@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import styles from './styles.css';
+import styles from './styles.less';
 import { SIGN_IN, SIGN_OUT } from '../../../core/actions';
 
 export default class CustomerList extends Component {
