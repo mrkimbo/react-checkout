@@ -17,7 +17,7 @@ describe('Model', () => {
     populateModel();
     spyOn(spyObj, 'createDiscounts').and.callThrough();
     spyOn(model, 'applyDiscounts').and.callThrough();
-    spyOn(model, 'notify');
+    spyOn(model, 'notify').and.callThrough();
   });
   afterEach(() => {
     model.reset();
@@ -70,8 +70,12 @@ describe('Model', () => {
       model.removeItem(mocks.PRODUCT());
     });
 
-    it('should remove the item', () => {
+    it('should remove the item if it is present in the stored items', () => {
       expect(model.items.length).toEqual(2);
+    });
+
+    it('should not error if the item is NOT present in the stored items', () => {
+      expect(() => model.removeItem({ id: 'unknown' })).not.toThrow();
     });
 
     it('should apply the available discounts to the stored items', () => {
@@ -162,6 +166,19 @@ describe('Model', () => {
     it('should sum the prices of ALL items in the cart with discounts', () => {
       model.updateCustomer('bob');
       expect(model.calculate()).toEqual(145); // 50 + 50 + 45
+    });
+  });
+
+  // just for coverage...
+  describe('notify', () => {
+
+    beforeEach(() => {
+      spyOn(model.onChange, 'dispatch');
+      model.notify();
+    });
+
+    it('should dispatch the change signal', () => {
+      expect(model.onChange.dispatch).toHaveBeenCalled();
     });
   });
 });
