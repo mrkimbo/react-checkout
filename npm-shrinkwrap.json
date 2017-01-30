@@ -3238,6 +3238,12 @@
       "resolved": "https://nexus.cd.auspost.com.au/nexus/repository/auspost-ddc-npmjs/object-keys/-/object-keys-1.0.11.tgz",
       "dev": true
     },
+    "object.assign": {
+      "version": "4.0.4",
+      "from": "object.assign@>=4.0.3 <5.0.0",
+      "resolved": "https://registry.npmjs.org/object.assign/-/object.assign-4.0.4.tgz",
+      "dev": true
+    },
     "object.omit": {
       "version": "2.0.1",
       "from": "object.omit@>=2.0.0 <3.0.0",
@@ -3778,6 +3784,12 @@
       "version": "15.4.2",
       "from": "react@>=15.4.2 <16.0.0",
       "resolved": "https://registry.npmjs.org/react/-/react-15.4.2.tgz",
+      "dev": true
+    },
+    "react-a11y": {
+      "version": "0.3.3",
+      "from": "react-a11y@latest",
+      "resolved": "https://registry.npmjs.org/react-a11y/-/react-a11y-0.3.3.tgz",
       "dev": true
     },
     "react-dom": {
