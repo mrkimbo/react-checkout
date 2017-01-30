@@ -1,4 +1,4 @@
-# Seek - Store (Part1)
+# React Checkout
 
 #### Summary
 
