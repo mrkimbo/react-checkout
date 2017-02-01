@@ -1,6 +1,9 @@
 language: node_js
+node_js:
+  - "6"
 
-#should pick up .nvmrc to set node version
+before_script:
+  - npm install
 
 script: 
   - npm run lint
