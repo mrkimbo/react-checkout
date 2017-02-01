@@ -1,0 +1,8 @@
+language: node_js
+
+#should pick up .nvmrc to set node version
+
+script: 
+  - npm run lint
+  - npm test
+  - npm run build
