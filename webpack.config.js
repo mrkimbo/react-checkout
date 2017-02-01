@@ -1,3 +1,5 @@
+const cssLoaderOptions = '?modules=true&localIdentName=[folder]_[hash:base64:5]';
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -21,7 +23,7 @@ module.exports = {
       {
         test: /\.less/,
         exclude: /node_modules/,
-        loader: 'style!css!postcss!less'
+        loader: `style!css?${cssLoaderOptions}!postcss!less`
       },
       {
         test: /\.json/,
