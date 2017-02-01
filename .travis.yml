@@ -1,8 +1,16 @@
 language: node_js
 
-#should pick up .nvmrc to set node version
+# node version specified via .nvmrc
 
 script: 
   - npm run lint
   - npm test
   - npm run build
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+  
