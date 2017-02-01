@@ -1,4 +1,4 @@
-# React Checkout
+# React Checkout [![Build Status](https://travis-ci.org/tripleaxis/react-checkout.svg?branch=master)](https://travis-ci.org/tripleaxis/react-checkout)
 
 #### Summary
 
