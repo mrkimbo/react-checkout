@@ -15,7 +15,7 @@
     }
   },
   "extends": [
-    "auspost",
+    "defaults/configurations/eslint",
     "plugin:react/recommended"
   ],
   "plugins": [

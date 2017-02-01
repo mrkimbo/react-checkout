@@ -1295,10 +1295,10 @@
         }
       }
     },
-    "eslint-config-auspost": {
-      "version": "1.2.0",
-      "from": "eslint-config-auspost@latest",
-      "resolved": "https://nexus.cd.auspost.com.au/nexus/repository/auspost-ddc-npmjs/eslint-config-auspost/-/eslint-config-auspost-1.2.0.tgz",
+    "eslint-config-defaults": {
+      "version": "9.0.0",
+      "from": "eslint-config-defaults@latest",
+      "resolved": "https://registry.npmjs.org/eslint-config-defaults/-/eslint-config-defaults-9.0.0.tgz",
       "dev": true
     },
     "eslint-loader": {

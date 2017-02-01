@@ -26,7 +26,7 @@ export default class CustomerList extends Component {
 
   signOut() {
     SIGN_OUT.dispatch();
-  };
+  }
 
   signIn(customer) {
     SIGN_IN.dispatch(customer);
